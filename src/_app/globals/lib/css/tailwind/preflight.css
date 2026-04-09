@@ -1,0 +1,38 @@
+@layer base {
+  
+  body {
+    @apply bg-background-none text-symb-primary;
+    max-width: 100vw;
+    min-height: 100%;
+    margin: 0;
+    font-size: 16px;
+    position: relative;
+  }
+
+  h1 {
+    @apply text-h1
+  }
+
+  h2 {
+    @apply text-h2
+  }
+  
+  /* удаление иконки очистки поля в IE */
+  input[type="text"]::-ms-clear {
+    display: none;
+  }
+  /* удаление иконки отображения пароля в IE */
+  input[type="password"]::-ms-reveal {
+    display: none;
+  }
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type="password"] {
+      font-family: Verdana, Geneva, sans-serif;
+      letter-spacing: -.75px;
+    }
+    input[type="password"]::placeholder {
+      font-family: var(--font-sans);
+      letter-spacing: normal; /* опционально - убрать сжатие для плейсхолдера */
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": "a1111111-1111-4111-8111-111111111101",
+      "name": "Анна",
+      "surname": "Смирнова",
+      "middlename": "Петровна",
+      "position": "manager",
+      "phone": "+79001001001",
+      "phoneVerified": true,
+      "schedule": {
+        "weekdaysStart": 28800,
+        "weekdaysEnd": 64800,
+        "allowOffdayCallsWeekdays": false,
+        "lunchStart": 43200,
+        "lunchEnd": 46800,
+        "allowLunchCalls": false
+      }
+    },
+    {
+      "id": "a1111111-1111-4111-8111-111111111102",
+      "name": "Борис",
+      "surname": "Козлов",
+      "middlename": "Сергеевич",
+      "position": "specialist",
+      "phone": "+79001001002",
+      "phoneVerified": false,
+      "schedule": {
+        "weekdaysStart": 32400,
+        "weekdaysEnd": 72000,
+        "allowOffdayCallsWeekdays": true
+      }
+    },
+    {
+      "id": "a1111111-1111-4111-8111-111111111103",
+      "name": "Вера",
+      "surname": "Новикова",
+      "middlename": "Игоревна",
+      "position": "intern",
+      "phone": "+79001001003",
+      "phoneVerified": true,
+      "schedule": {
+        "weekdaysStart": 0,
+        "weekdaysEnd": 86400,
+        "allowOffdayCallsWeekdays": false,
+        "lunchStart": 46800,
+        "lunchEnd": 48600,
+        "allowLunchCalls": true
+      }
+    },
+    {
+      "id": "a1111111-1111-4111-8111-111111111104",
+      "name": "Глеб",
+      "surname": "Волков",
+      "middlename": "Андреевич",
+      "position": "contractor",
+      "phone": "+79001001004",
+      "phoneVerified": false,
+      "schedule": {
+        "weekdaysStart": 36000,
+        "weekdaysEnd": 61200,
+        "allowOffdayCallsWeekdays": true
+      }
+    },
+    {
+      "id": "a1111111-1111-4111-8111-111111111105",
+      "name": "Дарья",
+      "surname": "Морозова",
+      "middlename": "Олеговна",
+      "position": "director",
+      "phone": "+79001001005",
+      "phoneVerified": true,
+      "schedule": {
+        "weekdaysStart": 25200,
+        "weekdaysEnd": 68400,
+        "allowOffdayCallsWeekdays": false
+      }
+    }
+  ]
+}

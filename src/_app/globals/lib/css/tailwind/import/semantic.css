@@ -1,0 +1,58 @@
+@theme {
+  /* -- Main */
+  --semantic-color-basic-min: var(--base-color-grey-0);
+  --semantic-color-basic-med: var(--base-color-grey-400);
+  --semantic-color-basic-max: var(--base-color-grey-900);
+
+  --semantic-color-neutral-min: var(--base-color-grey-200);
+  --semantic-color-neutral-med: var(--base-color-grey-300);
+  --semantic-color-neutral-max: var(--base-color-grey-400);
+
+  --semantic-color-warn-min: var(--base-color-yellow-200);
+  --semantic-color-warn-med: var(--base-color-yellow-500);
+  --semantic-color-warn-max: var(--base-color-yellow-600);
+
+  --semantic-color-error-min: var(--base-color-red-200);
+  --semantic-color-error-med: var(--base-color-red-500);
+  --semantic-color-error-max: var(--base-color-red-600);
+
+  --semantic-color-success-min: var(--base-color-green-400);
+  --semantic-color-success-med: var(--base-color-green-500);
+  --semantic-color-success-max: var(--base-color-green-600);
+
+  --semantic-color-brand-min: var(--base-color-red-200);
+  --semantic-color-brand-med: var(--base-color-red-500);
+  --semantic-color-brand-max: var(--base-color-red-600);
+
+  --semantic-color-accent-min: var(--base-color-yellow-200);
+  --semantic-color-accent-med: var(--base-color-yellow-500);
+  --semantic-color-accent-max: var(--base-color-yellow-600);
+
+  --semantic-color-limit-min: var(--base-color-blue-200);
+  --semantic-color-limit-med: var(--base-color-blue-300);
+  --semantic-color-limit-max: var(--base-color-blue-600);
+
+  /* -- Text */
+  --semantic-color-symb-primary: var(--base-color-grey-900);
+  --semantic-color-symb-secondary: var(--base-color-grey-500);
+  --semantic-color-symb-tertiary: var(--base-color-grey-400);
+  --semantic-color-symb-inverse: var(--base-color-grey-0);
+  --semantic-color-symb-error: var(--base-color-red-500);
+  --semantic-color-symb-disabled: var(--base-color-grey-300);
+
+  /* -- Stroke */
+  --semantic-color-stroke-min: var(--base-color-grey-100);
+  --semantic-color-stroke-med: var(--base-color-grey-200);
+  --semantic-color-stroke-max: var(--base-color-grey-300);
+  --semantic-color-stroke-active: var(--base-color-grey-300);
+  --semantic-color-stroke-error: var(--base-color-red-500);
+
+  /* -- Background */
+  --semantic-color-background-none: var(--base-color-grey-0);
+  --semantic-color-background-min: var(--base-color-grey-50);
+  --semantic-color-background-med: var(--base-color-grey-100);
+  --semantic-color-background-max: var(--base-color-grey-200);
+  --semantic-color-background-error: var(--base-color-red-100);
+
+  
+}

@@ -1,0 +1,24 @@
+[data-overlayscrollbars-field] {
+  appearance: none;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  field-sizing: content;
+}
+[data-overlayscrollbars-viewport] > [data-overlayscrollbars-field] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* OverlayScrollbars: размер/цвет через официальные CSS custom properties. */
+.os-scrollbar {
+  --os-size: 12px;
+  --os-handle-bg: var(--color-stroke-max);
+  --os-handle-bg-hover: var(--color-stroke-max);
+  --os-handle-bg-active: var(--color-stroke-max);
+}

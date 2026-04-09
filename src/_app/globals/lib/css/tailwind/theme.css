@@ -1,0 +1,121 @@
+@theme {
+
+  /* Base */
+  --font-sans: var(--font-rubik), Arial, sans-serif;
+  --font-icon: var(--font-material-symbols);
+
+  --breakpoint-*: initial;
+  /* 320px Mobile */
+  --breakpoint-s: 20rem;
+  /* 768px Tablet */
+  --breakpoint-m: 48rem;
+  /* 1024px Laptop */
+  --breakpoint-l: 64rem;
+  /* 1280px Desktop */
+  --breakpoint-xl: 80rem;
+  /* 1536px Ultrawide */
+  --breakpoint-xxl: 96rem;
+
+  /* Semantic */
+  --color-*: initial;
+
+  /* -- Main */
+  --color-basic-min: var(--semantic-color-basic-min);
+  --color-basic-med: var(--semantic-color-basic-med);
+  --color-basic-max: var(--semantic-color-basic-max);
+
+  --color-neutral-min: var(--semantic-color-neutral-min);
+  --color-neutral-med: var(--semantic-color-neutral-med);
+  --color-neutral-max: var(--semantic-color-neutral-max);
+
+  --color-warn-min: var(--semantic-color-warn-min);
+  --color-warn-med: var(--semantic-color-warn-med);
+  --color-warn-max: var(--semantic-color-warn-600);
+
+  --color-error-min: var(--semantic-color-error-min);
+  --color-error-med: var(--semantic-color-error-med);
+  --color-error-max: var(--semantic-color-error-max);
+
+  --color-success-min: var(--semantic-color-success-min);
+  --color-success-med: var(--semantic-color-success-med);
+  --color-success-max: var(--semantic-color-success-max);
+
+  --color-brand-min: var(--semantic-color-brand-min);
+  --color-brand-med: var(--semantic-color-brand-med);
+  --color-brand-max: var(--semantic-color-brand-max);
+
+  --color-accent-min: var(--semantic-color-accent-min);
+  --color-accent-med: var(--semantic-color-accent-med);
+  --color-accent-max: var(--semantic-color-accent-max);
+
+  --color-limit-min: var(--semantic-color-limit-min);
+  --color-limit-med: var(--semantic-color-limit-med);
+  --color-limit-max: var(--semantic-color-limit-max);
+
+  /* -- Text */
+  --color-symb-primary: var(--semantic-color-symb-primary);
+  --color-symb-secondary: var(--semantic-color-symb-secondary);
+  --color-symb-tertiary: var(--semantic-color-symb-tertiary);
+  --color-symb-inverse: var(--semantic-color-symb-inverse);
+  --color-symb-error: var(--semantic-color-symb-error);
+  --color-symb-disabled: var(--semantic-color-symb-disabled);
+
+  /* -- Stroke */
+  --color-stroke-min: var(--semantic-color-stroke-min);
+  --color-stroke-med: var(--semantic-color-stroke-med);
+  --color-stroke-max: var(--semantic-color-stroke-max);
+  --color-stroke-active: var(--semantic-color-stroke-active);
+  --color-stroke-error: var(--semantic-color-stroke-error);
+
+  /* -- Background */
+  --color-background-none: var(--semantic-color-background-none);
+  --color-background-min: var(--semantic-color-background-min);
+  --color-background-med: var(--semantic-color-background-med);
+  --color-background-max: var(--semantic-color-background-max);
+  --color-background-error: var(--semantic-color-background-error);
+
+  /* Spacing */
+  --spacing: 0.25rem;
+
+  --radius-*: initial;
+  --radius-xs: 0.25rem;
+  --radius-s: 0.5rem;
+  --radius-m: 0.75rem;
+  --radius-l: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-xxl: 1.5rem;
+
+  /* Typography */
+  --text-*: initial;
+
+  --text-h1: 1.5rem;
+  --text-h1--line-height: 1.4;
+  --text-h1--letter-spacing: 0.01;
+  --text-h1--font-weight: 400;
+
+  --text-h2: 1.125rem;
+  --text-h2--line-height: 1.4;
+  --text-h2--letter-spacing: 0.01;
+  --text-h2--font-weight: 400;
+
+  --text-l: 1rem;
+  --text-l--line-height: 1.4;
+  --text-l--letter-spacing: 0.01;
+  --text-l--font-weight: 400;
+
+  --text-m: 0.875rem;
+  --text-m--line-height: 1.4;
+  --text-m--letter-spacing: 0.01;
+  --text-m--font-weight: 400;
+
+  --text-s: 0.75rem;
+  --text-s--line-height: 1.4;
+  --text-s--letter-spacing: 0.01;
+  --text-s--font-weight: 400;
+
+  --text-xs: 0.625rem;
+  --text-xs--line-height: 1.4;
+  --text-xs--letter-spacing: 0.01;
+  --text-xs--font-weight: 400;
+
+}
