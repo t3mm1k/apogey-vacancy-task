@@ -27,7 +27,7 @@ export function ModalChromeHeader({
           <button
             type="button"
             onClick={onBack}
-            className="inline-flex items-center justify-center rounded-l bg-background-med px-3 py-2 text-symb-secondary transition-colors hover:bg-background-max"
+            className="inline-flex items-center justify-center rounded-m bg-background-med px-3 py-2 text-symb-secondary transition-colors hover:bg-background-max"
             aria-label="Назад"
           >
             <Icon name="keyboard_backspace" className="text-symb-secondary" />

@@ -34,3 +34,9 @@ export function phoneLooksValid(digits: string): boolean {
   const n = normalizePhoneDigits(digits);
   return n.length === 11 && n.startsWith("7");
 }
+
+export function formatMmSs(totalSec: number): string {
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}

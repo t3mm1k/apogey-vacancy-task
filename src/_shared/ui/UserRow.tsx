@@ -6,6 +6,7 @@ export type UserRowProps = {
   confirmed: boolean;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 export default function UserRow({
@@ -13,34 +14,30 @@ export default function UserRow({
   confirmed,
   className,
   onClick,
+  disabled,
 }: UserRowProps) {
   const Tag = onClick ? "button" : "div";
   return (
     <Tag
       type={onClick ? "button" : undefined}
       onClick={onClick}
+      disabled={onClick ? disabled : undefined}
       className={cn(
-        "flex w-full max-w-[312px] items-center gap-2 rounded-l py-3 pl-4 pr-3 text-left text-m text-symb-primary",
+        "flex w-full items-center gap-2 rounded-m py-3 pl-4 pr-3 text-left text-m text-symb-primary",
         confirmed ? "bg-background-med" : "bg-background-error",
-        onClick && "cursor-pointer transition-colors hover:brightness-[0.99]",
-        className
+        onClick &&
+          !disabled &&
+          "cursor-pointer transition-colors hover:brightness-[0.99]",
+        disabled && "cursor-not-allowed opacity-60",
+        className,
       )}
     >
       <span className="min-w-0 flex-1 truncate">{name}</span>
-      {(onClick || !confirmed) && (
-      <span
-        className={cn(
-          "inline-flex shrink-0 rounded-s p-1",
-          confirmed ? "bg-background-none" : "bg-background-none"
-        )}
-        aria-hidden
-      >
-        <Icon
-          name={confirmed ? "chevron_forward" : "error"}
-          className={confirmed ? "text-symb-secondary" : "text-symb-error"}
-        />
-      </span>
-      )}
+      {!confirmed ? (
+        <span className="inline-flex shrink-0" aria-hidden>
+          <Icon name="error" className="text-symb-primary" />
+        </span>
+      ) : null}
     </Tag>
   );
 }

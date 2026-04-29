@@ -4,10 +4,24 @@ const JSON_HEADERS = {
   "Content-Type": "application/json",
 };
 
+function normalizeBackendOrigin(url: string): string {
+  return url.replace(/\/+$/, "").replace(/\/api$/i, "");
+}
+
+export function apiUrl(path: string): string {
+  const p = path.startsWith("/") ? path : `/${path}`;
+  const raw =
+    typeof window !== "undefined"
+      ? process.env.NEXT_PUBLIC_BACKEND_URL?.trim()
+      : "";
+  if (!raw) return p;
+  return `${normalizeBackendOrigin(raw)}${p}`;
+}
+
 function authHeaders(): HeadersInit {
   const token =
     typeof window !== "undefined"
-      ? process.env.NEXT_PUBLIC_SECRET_KEY
+      ? process.env.NEXT_PUBLIC_SECRET_KEY?.trim()
       : undefined;
   if (!token) return {};
   return { "x-token": token };
@@ -17,7 +31,10 @@ export async function apiJson<T>(
   input: RequestInfo | URL,
   init?: RequestInit,
 ): Promise<T> {
-  const res = await fetch(input, {
+  const url =
+    typeof input === "string" && input.startsWith("/") ? apiUrl(input) : input;
+
+  const res = await fetch(url, {
     ...init,
     headers: {
       ...JSON_HEADERS,
