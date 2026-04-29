@@ -7,12 +7,16 @@ import type { UserEntity, UserProfileEntity } from "@db/types";
 
 import Button from "@shared/ui/Button";
 import Icon from "@shared/ui/Icon";
+import LoadingSpinner from "@shared/ui/LoadingSpinner";
+import UserRow from "@shared/ui/UserRow";
 
 import CreateUserSheet, {
   emptyDraft,
   type CreateDraft,
 } from "./components/CreateUserSheet";
+import UnsavedChangesDialog from "./components/UnsavedChangesDialog";
 import UserDetailSheet from "./components/UserDetailSheet";
+import UserListSkeleton from "./components/UserListSkeleton";
 import { apiJson, fetchUsers } from "./lib/api";
 
 function formatFullName(u: Pick<UserEntity, "surname" | "name" | "middlename">) {
@@ -36,6 +40,7 @@ export default function UsersDashboard({
     null,
   );
   const [detailDirty, setDetailDirty] = useState(false);
+  const [discardUnsavedOpen, setDiscardUnsavedOpen] = useState(false);
 
   const refreshUsers = useCallback(async () => {
     const list = await fetchUsers();
@@ -86,14 +91,21 @@ export default function UsersDashboard({
 
   const overlayOpen = sheet.kind !== "none";
 
-  const closeAll = () => {
-    if (sheet.kind === "detail" && detailDirty) {
-      const ok = window.confirm(
-        "Есть несохранённые изменения. Закрыть без сохранения?",
-      );
-      if (!ok) return;
-    }
+  const closeOverlay = () => {
     setSheet({ kind: "none" });
+  };
+
+  const tryCloseOverlay = () => {
+    if (sheet.kind === "detail" && detailDirty) {
+      setDiscardUnsavedOpen(true);
+      return;
+    }
+    closeOverlay();
+  };
+
+  const confirmDiscardUnsaved = () => {
+    setDiscardUnsavedOpen(false);
+    closeOverlay();
   };
 
   return (
@@ -109,12 +121,21 @@ export default function UsersDashboard({
       </aside>
 
       <div className="relative flex min-h-[max(792px,100dvh)] min-w-0 flex-1 flex-col rounded-tl-l rounded-tr-l bg-background-none">
+        {pending ? (
+          <div
+            className="pointer-events-auto absolute inset-0 z-45 flex items-center justify-center bg-basic-max/10"
+            aria-busy="true"
+            aria-live="polite"
+          >
+            <LoadingSpinner size={48} />
+          </div>
+        ) : null}
         {overlayOpen ? (
           <button
             type="button"
             className="absolute inset-0 z-30 cursor-default bg-basic-max/20"
             aria-label="Закрыть панель"
-            onClick={closeAll}
+            onClick={tryCloseOverlay}
           />
         ) : null}
 
@@ -129,35 +150,16 @@ export default function UsersDashboard({
         <div className="relative z-10 flex min-h-0 flex-1 flex-col px-8 pb-10 pt-0">
           <div className="flex flex-col gap-2">
             {users === null ? (
-              <>
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="h-[52px] w-full animate-pulse rounded-l bg-background-med"
-                  />
-                ))}
-              </>
+              <UserListSkeleton count={6} />
             ) : (
               users.map((u) => (
-                <button
+                <UserRow
                   key={u.id}
-                  type="button"
+                  name={formatFullName(u)}
+                  confirmed={u.phoneVerified}
                   disabled={pending}
                   onClick={() => setSheet({ kind: "detail", userId: u.id })}
-                  className={`flex w-full max-w-none cursor-pointer items-center gap-2 rounded-l py-3 pl-4 pr-3 text-left text-m text-symb-primary transition-colors hover:brightness-[0.99] ${
-                    u.phoneVerified ? "bg-background-med" : "bg-background-error"
-                  }`}
-                >
-                  <span className="min-w-0 flex-1 truncate">
-                    {formatFullName(u)}
-                  </span>
-                  <span className="inline-flex shrink-0 rounded-s bg-background-none p-1">
-                    <Icon
-                      name="chevron_forward"
-                      className="text-symb-secondary"
-                    />
-                  </span>
-                </button>
+                />
               ))
             )}
           </div>
@@ -195,10 +197,10 @@ export default function UsersDashboard({
             }
             pending={pending}
             setPending={setPending}
-            onClose={closeAll}
-            onConfirmed={async () => {
+            onClose={tryCloseOverlay}
+            onConfirmed={async (userId) => {
               await refreshUsers();
-              setSheet({ kind: "none" });
+              setSheet({ kind: "detail", userId });
             }}
           />
         ) : null}
@@ -209,6 +211,7 @@ export default function UsersDashboard({
             pending={pending}
             setPending={setPending}
             onClose={() => setSheet({ kind: "none" })}
+            onUnsavedCloseAttempt={() => setDiscardUnsavedOpen(true)}
             onSaved={(p) => {
               setDetailProfile(p);
               void refreshUsers();
@@ -218,10 +221,23 @@ export default function UsersDashboard({
         ) : null}
 
         {sheet.kind === "detail" && !detailProfile ? (
-          <div className="pointer-events-none absolute left-0 top-1/2 z-40 flex w-[400px] -translate-y-1/2 flex-col rounded-br-l rounded-tr-l bg-background-none p-8 shadow-xl">
-            <p className="text-m text-symb-secondary">Загрузка…</p>
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-40 flex h-full w-[400px] flex-col justify-center rounded-br-l rounded-tr-l bg-background-none shadow-[0px_4px_16px_-4px_rgba(9,18,58,0.1)]"
+            aria-busy="true"
+            aria-live="polite"
+            aria-label="Загрузка профиля"
+          >
+            <div className="flex flex-col items-center justify-center px-8 py-12">
+              <LoadingSpinner size={48} />
+            </div>
           </div>
         ) : null}
+
+        <UnsavedChangesDialog
+          open={discardUnsavedOpen}
+          onStay={() => setDiscardUnsavedOpen(false)}
+          onDiscard={confirmDiscardUnsaved}
+        />
       </div>
     </div>
   );
