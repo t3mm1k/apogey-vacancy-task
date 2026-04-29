@@ -39,6 +39,7 @@ yarn-error.log*
 # IDE
 /.cursor
 /.vscode
+/.idea
 
 # typescript
 *.tsbuildinfo
