@@ -87,7 +87,9 @@ export default function DropdownSelect({
             tone === "outline" &&
             cn(
               "h-10 justify-center rounded-s border bg-background-none px-2 py-2 text-l text-symb-primary focus:border-symb-secondary",
-              invalid ? "border-stroke-error" : "border-stroke-med",
+              invalid
+                ? "border-stroke-error"
+                : "border-stroke-med enabled:hover:border-stroke-max",
             ),
           layout !== "time" &&
             tone === "outline" &&
@@ -101,7 +103,7 @@ export default function DropdownSelect({
             tone === "outline" &&
             (invalid
               ? "border-stroke-error"
-              : "border-stroke-med focus:border-symb-secondary"),
+              : "border-stroke-med enabled:hover:border-stroke-max focus:border-symb-secondary"),
           tone === "filled" &&
             (invalid ? "ring-2 ring-stroke-error" : "border-0 focus-visible:ring-2 focus-visible:ring-stroke-active"),
           disabled && "cursor-not-allowed opacity-60",

@@ -82,7 +82,9 @@ export default function CodeInput({
           className={cn(
             "box-border flex h-14 w-12 rounded-s border bg-background-none text-center text-[32px] leading-none outline-none transition-colors",
             "text-symb-primary caret-symb-primary",
-            error ? "border-stroke-error text-symb-error" : "border-stroke-med focus:border-symb-secondary",
+            error
+              ? "border-stroke-error text-symb-error"
+              : "border-stroke-active enabled:hover:border-stroke-max focus:border-symb-secondary",
             disabled && "cursor-not-allowed opacity-60"
           )}
           onPaste={onPaste}

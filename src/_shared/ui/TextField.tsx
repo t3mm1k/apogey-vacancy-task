@@ -37,7 +37,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
           "placeholder:text-symb-tertiary",
           hasError
             ? "border-stroke-error"
-            : "border-stroke-med focus:border-symb-secondary disabled:border-stroke-min disabled:bg-background-med disabled:text-symb-disabled",
+            : "border-stroke-med enabled:hover:border-stroke-max focus:border-symb-secondary disabled:border-stroke-min disabled:bg-background-med disabled:text-symb-disabled",
           className
         )}
         {...props}
