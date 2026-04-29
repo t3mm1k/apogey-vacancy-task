@@ -1,14 +1,8 @@
-import ClientButton from "./components/ClientButton";
+import UsersDashboard from "./UsersDashboard";
 
-interface DashboardWidgetProps {
+export default async function Page(props: PageProps<"/dashboard">) {
+  const searchParams = await props.searchParams;
+  const initialCreateOpen = searchParams?.create === "1";
 
-}
-
-export default async function Page({...props}: DashboardWidgetProps) {
-
-  return (
-    <div className="fixed inset-0 flex items-center justify-center">
-      <ClientButton />
-    </div>
-  );
+  return <UsersDashboard initialCreateOpen={initialCreateOpen} />;
 }

@@ -1,5 +1,4 @@
 @theme {
-  /* -- Main */
   --semantic-color-basic-min: var(--base-color-grey-0);
   --semantic-color-basic-med: var(--base-color-grey-400);
   --semantic-color-basic-max: var(--base-color-grey-900);
@@ -32,7 +31,6 @@
   --semantic-color-limit-med: var(--base-color-blue-300);
   --semantic-color-limit-max: var(--base-color-blue-600);
 
-  /* -- Text */
   --semantic-color-symb-primary: var(--base-color-grey-900);
   --semantic-color-symb-secondary: var(--base-color-grey-500);
   --semantic-color-symb-tertiary: var(--base-color-grey-400);
@@ -40,19 +38,17 @@
   --semantic-color-symb-error: var(--base-color-red-500);
   --semantic-color-symb-disabled: var(--base-color-grey-300);
 
-  /* -- Stroke */
   --semantic-color-stroke-min: var(--base-color-grey-100);
   --semantic-color-stroke-med: var(--base-color-grey-200);
   --semantic-color-stroke-max: var(--base-color-grey-300);
   --semantic-color-stroke-active: var(--base-color-grey-300);
   --semantic-color-stroke-error: var(--base-color-red-500);
 
-  /* -- Background */
   --semantic-color-background-none: var(--base-color-grey-0);
   --semantic-color-background-min: var(--base-color-grey-50);
   --semantic-color-background-med: var(--base-color-grey-100);
   --semantic-color-background-max: var(--base-color-grey-200);
   --semantic-color-background-error: var(--base-color-red-100);
 
-  
+
 }
