@@ -1,10 +1,8 @@
-import { Dashboard } from "@pages/dashboard";
+import UsersDashboard from "@pages/dashboard/UsersDashboard";
 
 export default async function DashboardPage(props: PageProps<"/dashboard">) {
+  const searchParams = await props.searchParams;
+  const initialCreateOpen = searchParams?.create === "1";
 
-  return (
-    <Dashboard
-      
-    />
-  );
+  return <UsersDashboard initialCreateOpen={initialCreateOpen} />;
 }

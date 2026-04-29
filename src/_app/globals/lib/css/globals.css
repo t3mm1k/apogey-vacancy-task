@@ -1,11 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Figma imports */
 @import "./tailwind/import/base.css" theme(static inline);
 @import "./tailwind/import/semantic.css" theme(inline);
 
-/* Theme */
 @import "./tailwind/theme.css" theme(inline);
 @import "./tailwind/preflight.css";
 

@@ -7,7 +7,7 @@ export type IconProps = {
   filled?: boolean;
 };
 
-export default function Icon({ name, className, size = 20, filled }: IconProps) {
+export default function  Icon({ name, className, size = 20, filled }: IconProps) {
   const sizeClass = size === 16 ? "text-[16px]" : size === 24 ? "text-[24px]" : "text-[20px]";
   return (
     <span

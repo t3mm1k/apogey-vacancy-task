@@ -24,7 +24,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFiel
       {label !== undefined && (
         <label htmlFor={inputId} className="text-m text-symb-primary">
           {label}
-          {requiredMark ? <span className="text-stroke-error">*</span> : null}
+          {requiredMark ? <span className="text-symb-primary">*</span> : null}
         </label>
       )}
       <input

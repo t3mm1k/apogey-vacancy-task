@@ -18,7 +18,7 @@ export function ModalChromeHeader({
   return (
     <header
       className={cn(
-        "flex w-full max-w-[400px] items-center gap-3 rounded-tl-l rounded-tr-l bg-background-none px-8 pt-8 pb-5",
+        "flex w-full max-w-none items-center gap-3 rounded-tl-l rounded-tr-l bg-background-none px-8 pb-5 pt-8",
         className
       )}
     >
@@ -40,7 +40,7 @@ export function ModalChromeHeader({
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex size-9 items-center justify-center rounded-l bg-background-med p-2 text-symb-secondary transition-colors hover:bg-background-max"
+            className="inline-flex size-9 items-center justify-center rounded-m  bg-background-med p-2 text-symb-secondary transition-colors hover:bg-background-max"
             aria-label="Закрыть"
           >
             <Icon name="close" className="text-symb-secondary" />
@@ -60,7 +60,7 @@ export function ModalChromeFooter({ children, className }: ModalChromeFooterProp
   return (
     <footer
       className={cn(
-        "flex w-full max-w-[400px] flex-wrap items-center justify-end gap-5 rounded-br-xl rounded-bl-xl bg-background-none px-8 pb-8 pt-5",
+        "flex w-full max-w-none flex-wrap items-center justify-end gap-5 rounded-bl-xl rounded-br-xl bg-background-none px-8 pb-8 pt-5",
         className
       )}
     >

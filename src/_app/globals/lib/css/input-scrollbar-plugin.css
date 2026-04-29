@@ -15,7 +15,6 @@
   left: 0;
 }
 
-/* OverlayScrollbars: размер/цвет через официальные CSS custom properties. */
 .os-scrollbar {
   --os-size: 12px;
   --os-handle-bg: var(--color-stroke-max);

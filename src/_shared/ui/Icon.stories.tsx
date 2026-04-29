@@ -9,6 +9,8 @@ const names = [
   "error",
   "keyboard_backspace",
   "unfold_more",
+  "add",
+  "delete",
 ] as const;
 
 const meta = {

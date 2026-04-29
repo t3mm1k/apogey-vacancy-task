@@ -1,25 +1,17 @@
 @theme {
 
-  /* Base */
   --font-sans: var(--font-rubik), Arial, sans-serif;
   --font-icon: var(--font-material-symbols);
 
   --breakpoint-*: initial;
-  /* 320px Mobile */
   --breakpoint-s: 20rem;
-  /* 768px Tablet */
   --breakpoint-m: 48rem;
-  /* 1024px Laptop */
   --breakpoint-l: 64rem;
-  /* 1280px Desktop */
   --breakpoint-xl: 80rem;
-  /* 1536px Ultrawide */
   --breakpoint-xxl: 96rem;
 
-  /* Semantic */
   --color-*: initial;
 
-  /* -- Main */
   --color-basic-min: var(--semantic-color-basic-min);
   --color-basic-med: var(--semantic-color-basic-med);
   --color-basic-max: var(--semantic-color-basic-max);
@@ -52,7 +44,6 @@
   --color-limit-med: var(--semantic-color-limit-med);
   --color-limit-max: var(--semantic-color-limit-max);
 
-  /* -- Text */
   --color-symb-primary: var(--semantic-color-symb-primary);
   --color-symb-secondary: var(--semantic-color-symb-secondary);
   --color-symb-tertiary: var(--semantic-color-symb-tertiary);
@@ -60,21 +51,18 @@
   --color-symb-error: var(--semantic-color-symb-error);
   --color-symb-disabled: var(--semantic-color-symb-disabled);
 
-  /* -- Stroke */
   --color-stroke-min: var(--semantic-color-stroke-min);
   --color-stroke-med: var(--semantic-color-stroke-med);
   --color-stroke-max: var(--semantic-color-stroke-max);
   --color-stroke-active: var(--semantic-color-stroke-active);
   --color-stroke-error: var(--semantic-color-stroke-error);
 
-  /* -- Background */
   --color-background-none: var(--semantic-color-background-none);
   --color-background-min: var(--semantic-color-background-min);
   --color-background-med: var(--semantic-color-background-med);
   --color-background-max: var(--semantic-color-background-max);
   --color-background-error: var(--semantic-color-background-error);
 
-  /* Spacing */
   --spacing: 0.25rem;
 
   --radius-*: initial;
@@ -85,7 +73,6 @@
   --radius-xl: 1.25rem;
   --radius-xxl: 1.5rem;
 
-  /* Typography */
   --text-*: initial;
 
   --text-h1: 1.5rem;
