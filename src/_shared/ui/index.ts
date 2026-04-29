@@ -24,6 +24,9 @@ export type { CodeInputProps } from "./CodeInput";
 export { default as UserRow } from "./UserRow";
 export type { UserRowProps } from "./UserRow";
 
+export { default as LoadingSpinner } from "./LoadingSpinner";
+export type { LoadingSpinnerProps } from "./LoadingSpinner";
+
 export { ModalChromeFooter, ModalChromeHeader } from "./ModalChrome";
 export type {
   ModalChromeFooterProps,
